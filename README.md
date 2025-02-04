@@ -1,3 +1,5 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/akajuliaan/filerun-sink-bridge/badge)](https://www.codefactor.io/repository/github/akajuliaan/filerun-sink-bridge)
+
 
 # FileRun Sink Bridge <a name = "filerun_sink_bridge"></a>
 
@@ -14,7 +16,7 @@ Well I would recommend to use the docker image I provide for you, so you need to
 Just create a `docker-compose.yml` with the following content:
 
 
-```
+```yml
 services:
   api:
     image: ghcr.io/akajuliaan/filerun-sink-bridge
@@ -30,9 +32,9 @@ Now change things like the `SINK_URL` to your own data.
 
 ### Filerun Config
 
-Please change your `customizables/config.php` to set a `custom_url_shorter` url to where you deployed this container. Please note that the `SINK_TOKEN` is your "password" you use to login to your sink instance.
+Please change your `customizables/config.php` to set a `custom_url_shorter` url to where you deployed this container. Please note that the `token` is your "password" you use to login to your sink instance.
 
 ```php
 <?php
-$config['app']['weblinks']['custom_url_shortener] = 'http://url-to-bridge-instance:3000/short?token=YOUR_SINK_TOKEN&url=###'
+$config['app']['weblinks']['custom_url_shortener'] = 'http://url-to-bridge-instance:3000/short?token=YOUR_SINK_TOKEN&url=###'
 ```
